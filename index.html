@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="ja">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+	<title>NemSpace Appraiser</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<link rel="stylesheet" href="style.css" />
+	<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+	<script src="script/NemApi.js"></script>
+	<script src="script/indexController.js"></script>
+</head>
+
+<body>
+
+	<div class="jumbotron">
+		<H1>NemSpace Appraiser</H1>
+		<p>This site can determine if the NEM namespace is available</p>
+	</div>
+
+	<div class="container container-underLine-gray">
+		<form>
+			<div class="form-group">
+				<label>namespace</label>
+				<input class="form-control" id="input-namespace" placeholder="Please enter the namespace"
+					type="text"></input>
+				<!-- ダーミーのテキストボックス　テキストボックスが1つだとEnterキー押下時にフォームが送信されてしまうために設置 -->
+				<input class="form-control dummy"></input>
+			</div>
+			<button class="btn btn-outline-dark" id="search-btn" type="button">Search</button>
+		</form>
+	</div>
+
+	<div class="container" id="output-result">
+		<table class="table table-hover">
+			<thead>
+				<th>Field</th>
+				<th>Value</th>
+			</thead>
+			<tbody>
+				<tr>
+					<th id="result-item-1">fqn</th>
+					<th id="result-value-1"></th>
+				</tr>
+				<tr>
+					<th id="result-item-2">owner</th>
+					<th id="result-value-2"></th>
+				</tr>
+				<tr>
+					<th id="result-item-3">height</th>
+					<th id="result-value-3"></th>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+	<!--Strageオブジェクトを使って過去の検索履歴を表示させてみてもよいかも-->
+
+
+</body>
+
+</html>
