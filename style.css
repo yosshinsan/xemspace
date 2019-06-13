@@ -15,7 +15,6 @@
 
 */
 
-
 body{
     font-family:"Monotype Corsiva";
 }
@@ -39,4 +38,8 @@ button{
 
 .container-underLine-gray{
     border-bottom: 2px solid gray;
+}
+
+#result-text{
+    font-size: 36px;
 }
