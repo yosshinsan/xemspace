@@ -26,6 +26,19 @@ class Validator {
       return str;
     }
 
+
+    /**
+     *文字列が、nullか空文字かを判定します。
+     *空白のみの文字列は空文字と判定します。
+     * @param {string} str 判定する文字列
+     * @return {boolean} true:文字列がnullか空文字,false:文字列がnull、空文字ではない
+     * @memberof Validator
+     */
+    isNullOrWhiteSpace(str){
+      if (typeof str === 'undefined' || str === null) return true;
+      return str.replace(/\s/g, '').length < 1;
+    }
+
     /**
      *文字列の先頭が数字であるか判定します。
      *全角、半角の区別はしません。

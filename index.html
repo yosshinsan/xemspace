@@ -7,54 +7,85 @@
 	<title>NemSpace Appraiser</title>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 	<link rel="stylesheet" href="style.css" />
+	<!-- FontAwesomeのアイコン利用 -->
+	<link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
 	<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 	<script src="script/NemApi.js"></script>
+	<script src="script/Validator.js"></script>
 	<script src="script/indexController.js"></script>
 </head>
 
 <body>
 
+	<!-- トップ -->
 	<div class="jumbotron">
-		<H1>NemSpace Appraiser</H1>
+		<h1>NemSpace Appraiser</h1>
 		<p>This site can determine if the NEM namespace is available</p>
 	</div>
-
+	<!-- ネームスペース入力 -->
 	<div class="container container-underLine-gray">
 		<form>
 			<div class="form-group">
-				<label>namespace</label>
+				<h2>Namespace</h2>
 				<input class="form-control" id="input-namespace" placeholder="Please enter the namespace"
 					type="text"></input>
-				<!-- ダーミーのテキストボックス　テキストボックスが1つだとEnterキー押下時にフォームが送信されてしまうために設置 -->
+				<!-- ダミーのテキストボックス　テキストボックスが1つだとEnterキー押下時にフォームが送信されてしまうために設置 -->
 				<input class="form-control dummy"></input>
 			</div>
 			<button class="btn btn-outline-dark" id="search-btn" type="button">Search</button>
 		</form>
 	</div>
-
-	<div class="container" id="output-result">
-		<table class="table table-hover">
-			<thead>
-				<th>Field</th>
-				<th>Value</th>
-			</thead>
-			<tbody>
-				<tr>
-					<th id="result-item-1">fqn</th>
-					<th id="result-value-1"></th>
-				</tr>
-				<tr>
-					<th id="result-item-2">owner</th>
-					<th id="result-value-2"></th>
-				</tr>
-				<tr>
-					<th id="result-item-3">height</th>
-					<th id="result-value-3"></th>
-				</tr>
-			</tbody>
-		</table>
+	<!-- 結果表示 -->
+	<div>
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-12">
+					<h2>Result</h2>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-4">
+					<i id="result-icon"></i>
+				</div>
+				<div class="col-sm-8">
+					<strong id="result-text">No Result</strong>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- 詳細表示 -->
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-12">
+				<h2>Details</h2>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-12">
+					<table class="table table-hover">
+							<thead class="table-primary">
+								<th>Field</th>
+								<th>Value</th>
+							</thead>
+							<tbody>
+								<tr>
+									<th id="result-item-1">fqn</th>
+									<th id="result-value-1"></th>
+								</tr>
+								<tr>
+									<th id="result-item-2">owner</th>
+									<th id="result-value-2"></th>
+								</tr>
+								<tr>
+									<th id="result-item-3">height</th>
+									<th id="result-value-3"></th>
+								</tr>
+							</tbody>
+					</table>
+			</div>
+		</div>
 	</div>
 
 	<!--Strageオブジェクトを使って過去の検索履歴を表示させてみてもよいかも-->
