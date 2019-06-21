@@ -1,3 +1,7 @@
+
+//メンバー
+//#region 
+
 //検証クラス
 let validator = new Validator();
 
@@ -13,11 +17,20 @@ let ngIconClass = 'far fa-sad-tear';
 let warnIconClass = 'fas fa-exclamation-triangle';
 let iconSizeClass = 'fa-3x';
 
+//#endregion
+
 //イベントの登録
+//#region 
+
 document.addEventListener('DOMContentLoaded', function () {
     //検索ボタンクリック時のイベント登録
     document.getElementById('search-btn').addEventListener('click', searchButtonClick, false);
 })
+
+//#endregion
+
+//イベント処理
+//#region 
 
 /**
  *検索ボタンクリック時の処理
@@ -32,6 +45,11 @@ function searchButtonClick(){
         upDateResult();
     }
 }
+
+//#endregion
+
+//メソッド
+//#region 
 
 /**
  *結果の表示をクリアする
@@ -165,3 +183,5 @@ function upDateResult() {
             $('#result-value-3').html(data.responseJSON.status);
         })
 }
+
+//#endregion
